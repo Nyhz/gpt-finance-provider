@@ -1,0 +1,36 @@
+openapi: 3.0.0
+info:
+  title: Finance Assets API
+  version: 1.0.0
+  description: API to retrieve filtered asset data from Portfolio Performance CSV
+servers:
+  - url: https://your-domain.com
+paths:
+  /assets:
+    get:
+      summary: Get filtered asset data
+      description: Returns a list of assets with complete data
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    Shares:
+                      type: string
+                    Name:
+                      type: string
+                    Symbol:
+                      type: string
+                    Quote:
+                      type: string
+                    Market Value:
+                      type: string
+                    Share in %:
+                      type: string
+                    Note:
+                      type: string
